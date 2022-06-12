@@ -1,0 +1,66 @@
+﻿@model BlogMvcApp.Models.Blog
+
+@{
+    ViewBag.Title = "Details";
+}
+<h1>@Model.Basliq</h1>
+<hr />
+<p>
+    <span class="glyphicon glyphicon-time"></span>
+    @Model.EklenmeTarihi
+</p>
+<hr />
+<img class="img-responsive" src="http://placehold.jp/900x300.png" alt="" />
+<hr />
+<blockquote>
+    <p>@Model.Aciklama</p>
+</blockquote>
+<p>
+    @Model.Icerik
+</p>
+<div class="comment">
+    <hr />
+    <div class="well">
+        <h4>Serh Yaz:</h4>
+        <form role="form">
+            <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </form>
+    </div>
+    <hr />
+    <div class="media">
+        <img class="mr-3" src="..." alt="Generic placeholder image">
+        <div class="media-body">
+            <h5 class="mt-0">Media heading</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+            <div class="media mt-3">
+                <a class="pr-3" href="#">
+                    <img src="..." alt="Generic placeholder image">
+                </a>
+                <div class="media-body">
+                    <h5 class="mt-0">Media heading</h5>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section SagKolon
+ {
+    <div class="well">
+        <h4>Blog Search</h4>
+        <div class="input-group">
+            <input type="text" class="form-control" />
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+
+            </span>
+        </div>
+    </div>
+    @{Html.RenderAction("KategoriListesi", "Category");};
+}
